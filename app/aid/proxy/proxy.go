@@ -209,3 +209,7 @@ func (self *Proxy) findUsable(proxy string, testHost string) (alive bool, timede
 	_, err := self.surf.Download(req)
 	return err == nil, time.Since(t0)
 }
+
+func (self *Proxy) Count() int64 {
+	return self.online
+}
