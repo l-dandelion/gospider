@@ -402,6 +402,14 @@ func (self *Context) PullItems() (ds []data.DataCell) {
 	return
 }
 
+func (self *Context) PullFiles() (fs []data.FileCell) {
+	self.Lock()
+	fs = self.files
+	self.files = []data.FileCell{}
+	self.Unlock()
+	return
+}
+
 func (self *Context) GetKeyin() string {
 	return self.spider.GetKeyin()
 }

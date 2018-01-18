@@ -6,5 +6,5 @@ import (
 )
 
 type Downloader interface {
-	Downloader(*spider.Spider, *request.Request) *spider.Context
+	Download(*spider.Spider, *request.Request) *spider.Context
 }
